@@ -28,7 +28,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: ${{ github.workspace }}/target/*.war
+
 
   deploy:
     runs-on: windows-latest
