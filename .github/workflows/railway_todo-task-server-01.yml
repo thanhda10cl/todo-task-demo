@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_45b87a3e46ee4b06b82d2b4de6717c80 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_c4f417bd2858430392c68940ff0cae17 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_9807e8324a0d48779b0dc05b4f01e074 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_6eea68a88b25495fa258e47d43c6b90c }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_45b87a3e46ee4b06b82d2b4de6717c80 }}/mcr.microsoft.com/azure-app-service/windows/parkingpage:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_9807e8324a0d48779b0dc05b4f01e074 }}/todotask:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'todo-task-server-01'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0c3a97d115a548d19f63d091f2fd79d2 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_45b87a3e46ee4b06b82d2b4de6717c80 }}/mcr.microsoft.com/azure-app-service/windows/parkingpage:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9efea9174022490dbfcd02c95976b027 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_9807e8324a0d48779b0dc05b4f01e074 }}/todotask:${{ github.sha }}'
