@@ -50,5 +50,5 @@ jobs:
         with:
           app-name: 'todo-task-webapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9027B3180942484ABAF3E7653D27F2E7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_47c45244a2a34635abf25a17720bb37d }}
           package: '*.jar'
