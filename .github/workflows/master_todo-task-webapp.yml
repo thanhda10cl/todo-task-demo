@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: windows-latest
@@ -50,4 +50,4 @@ jobs:
           app-name: 'todo-task-webapp'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_910F9242BEFD413E8DFF544C7BF02FD6 }}
-          package: '*.war'
+          package: '*.jar'
