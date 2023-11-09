@@ -22,7 +22,7 @@ public class TaskAPI {
         List<TaskDTO> listTask = taskService.getAllTask();
         return ResponseEntity.ok().body(listTask);
     }
-    @GetMapping(value = "/demo")
+    @GetMapping(value = "/demo123")
     public ResponseEntity<String> demo() {
         return ResponseEntity.ok().body("cicd dc oiii");
     }
