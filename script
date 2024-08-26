@@ -1,0 +1,3 @@
+CREATE USER 'nguyenda'@'%' IDENTIFIED BY '20110169';
+GRANT ALL PRIVILEGES ON db_tasl.* TO 'nguyenda'@'%';
+FLUSH PRIVILEGES;
